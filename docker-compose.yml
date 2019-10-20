@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    volumes:
+      - "../nginx:/etc/nginx/conf.d"
+    #   - "./etc/ssl:etc/ssl"
+      - "../sites:/var/www/sites"
+    ports:
+      - "8080:80"
+    restart: always
+
+  php-fpm:
+    container_name: php-fpm
+    image: nanoninja/php-fpm:7.1.14
+    volumes:
+      - "../php/php.ini:/usr/local/etc/php/conf.d/php.ini"
+    restart: always
