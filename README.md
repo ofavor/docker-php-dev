@@ -27,8 +27,8 @@ cd  ~/Workspace/php
 cd docker
 chmod u+x init
 ./init
-mkdir -p ../sites/default_server
-echo "<?php phpinfo(); ?>" > ../sites/default_server/info.php
+mkdir -p ../sites/default
+echo "<?php phpinfo(); ?>" > ../sites/default/info.php
 ```
 
 ### Run
