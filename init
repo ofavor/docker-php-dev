@@ -1,0 +1,37 @@
+#!/bin/sh
+
+DOCKER=$(PWD)
+BASE=$DOCKER/..
+
+echo "Initializing environment ...."
+
+echo ""
+echo "----------------------------------------------"
+echo "Preparing nginx folder ..."
+mkdir -vp $BASE/nginx
+cp -v $DOCKER/nginx.default.template.conf $BASE/nginx/default.conf
+echo "Now you can edit $BASE/nginx/default.conf on your needs."
+echo "Or you might want to add new nginx configurations."
+
+echo ""
+echo "----------------------------------------------"
+echo "Preparing mysql folder ..."
+mkdir -vp $BASE/mysql/data
+
+echo ""
+echo "----------------------------------------------"
+echo "Preparing redis folder ..."
+mkdir -vp $BASE/redis/data
+
+echo ""
+echo "----------------------------------------------"
+echo "Preparing php folder ..."
+mkdir -vp $BASE/php
+cp -v $DOCKER/php.template.ini $BASE/php/php.ini
+echo "Now you can edit $BASE/php/php.ini on your needs."
+
+echo ""
+echo "----------------------------------------------"
+echo "Preparing sites folder ..."
+mkdir -vp $BASE/sites
+
